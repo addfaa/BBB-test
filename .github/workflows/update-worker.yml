@@ -1,0 +1,101 @@
+name: Auto Update Worker
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 1 * * *" # 每天凌晨1点自动运行
+  workflow_dispatch:
+    inputs:
+      update_latest:
+        description: '是否手动更新 Latest 正式版？'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 初始化仓库
+        uses: actions/checkout@v4
+
+      - name: 获取当前本地版本
+        id: get_local_version
+        run: |
+          if [ -f version.txt ]; then
+            LOCAL_VERSION=$(cat version.txt)
+          else
+            LOCAL_VERSION=""
+          fi
+          echo "LOCAL_VERSION=$LOCAL_VERSION" >> $GITHUB_ENV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
